@@ -20,11 +20,19 @@ function calculo(monto, cuotas) {
         console.log("Cuotas incorrectas");
     }
 }
-console.log("Bienvenido/a al simulador de prestamos online");
 
-let monto = parseInt(prompt("Ingrese el monto que quiere solicitar"));
+alert("Bienvenido al simulador de prestamos online");
+
+let monto = parseInt(prompt("Ingrese el monto que quiere solicitar\n\n Monto minimo a solicitar es de: 50000"));
+
+while (monto < 50000) {
+alert ("el monto " + monto + "$ es menor al permitido")
+
+monto = prompt ("Ingrese un nuevo monto")
+}
+
 let cuotas = parseInt(prompt("Seleccione la cantidad de cuotas 3-6-12-18"));
 console.log("Solicitaste:", monto, "$");
 console.log("En:", cuotas, "cuotas");
-console.log("El total de intereses a pagar es de:", calculo(monto, cuotas));
-console.log("El monto total a pagar es:", calculo(monto, cuotas) + monto);
+console.log("El total de intereses a pagar es de:", calculo(monto, cuotas), "$");
+console.log("El monto total a pagar es:", calculo(monto, cuotas) + monto, "$");
